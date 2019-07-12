@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>...</title>
+    <meta charset=utf-8>
+	<script src="/get_rtc" type="text/javascript"></script>
+  <script type="text/javascript">
+  		function load(){
+		document.getElementById("day").value=date[0]
+		document.getElementById("month").selectedIndex =date[1]-1
+		document.getElementById("year").value=date[2]
+		document.getElementById("hours").value=time[0]
+		document.getElementById("minutes").value=time[1]
+		document.getElementById("seconds").value=time[2]
+		}
+  
+  
+		function p(){
+		var today = new Date();
+		document.getElementById("day").value=today.getDate()
+		document.getElementById("month").selectedIndex =today.getMonth()
+		document.getElementById("year").value=today.getFullYear()
+		//document.getElementById("month").selectedIndex =(today.getMonth()+1)
+		document.getElementById("hours").value=today.getHours()
+		document.getElementById("minutes").value=today.getMinutes()
+		document.getElementById("seconds").value=today.getSeconds()
+		}
+  </script>
+  </head>
+  <body onload="load();">
+  <form action="/set_rtc" method="GET">
+  дата
+  <input type="number" name="d" id="day" min="1" max="31" step="1" size=2>
+	<select name="m" id = "month">
+		<option value = "1" selected>январь</option>
+		<option value = "2" >февраль</option>
+		<option value = "3" >март</option>
+		<option value = "4" >апрель</option>
+		<option value = "5" >май</option>
+		<option value = "6" >июнь</option>
+		<option value = "7" >июль</option>
+		<option value = "8" >август</option>
+		<option value = "9" >сентябрь</option>
+		<option value = "10" >октябрь</option>
+		<option value = "11" >ноябрь</option>
+		<option value = "12" >декабрь</option>
+	</select>
+  <input type="number" name="y" id="year" min="any" max="any" step="1" size=4>
+  <p>
+время
+  <input type="number" name="hours" id="hours" min="0" max="23" step="1" size=2>:
+  <input type="number" name="min" id="minutes" min="0" max="59" step="1" size=2>:
+  <input type="number" name="sec" id="seconds" min="0" max="59" step="1" size=2>
+  <p>
+  <input type="submit" value="Сохранить">
+  </form>
+  <button onclick="p();">Получить время от компьютера</button> 
+  
+  
+  </body>
+</html>

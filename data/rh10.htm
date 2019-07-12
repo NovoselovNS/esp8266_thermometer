@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>График</title>
+
+		<style type="text/css">
+#container {
+	height: 600px;
+	margin: 0 auto
+}
+		</style>
+	</head>
+	<body>
+<script src="highcharts.js"></script>
+<script src="exporting.js"></script>
+<script src="export-data.js"></script>
+
+<script src="temp_js?t=10" type="text/javascript"></script>
+<script src="temp_js?h=10" type="text/javascript"></script>
+<script src="timedRefresh?t=10" type="text/javascript"></script>
+
+
+<div id="container"></div>
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        zoomType: 'x',
+        panning: true,
+        panKey: 'shift'
+    },
+    title: {
+        text: 'График'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Влажность,%'
+        }
+    },
+	xAxis: {
+        categories: time,
+    minTickInterval: 10
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 0
+        }
+    },
+    series: [
+	{name: 'RH',data: humidity}
+	],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+		<a href=/>На главную</a>
+	</body>
+</html>

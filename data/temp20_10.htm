@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>График</title>
+
+		<style type="text/css">
+#container {
+	height: 600px;
+	margin: 0 auto
+}
+		</style>
+	</head>
+	<body>
+<script src="highcharts.js"></script>
+<script src="exporting.js"></script>
+<script src="export-data.js"></script>
+
+<script src="temp_js?n=0" type="text/javascript"></script>
+<script src="temp_js?n=1" type="text/javascript"></script>
+<script src="temp_js?n=2" type="text/javascript"></script>
+<script src="temp_js?n=3" type="text/javascript"></script>
+<script src="temp_js?n=4" type="text/javascript"></script>
+<script src="temp_js?n=5" type="text/javascript"></script>
+<script src="temp_js?n=6" type="text/javascript"></script>
+<script src="temp_js?n=7" type="text/javascript"></script>
+<script src="temp_js?n=8" type="text/javascript"></script>
+<script src="temp_js?n=9" type="text/javascript"></script>
+<script src="temp_js?n=10" type="text/javascript"></script>
+<script src="temp_js?n=11" type="text/javascript"></script>
+<script src="temp_js?n=12" type="text/javascript"></script>
+<script src="temp_js?n=13" type="text/javascript"></script>
+<script src="temp_js?n=14" type="text/javascript"></script>
+<script src="temp_js?n=15" type="text/javascript"></script>
+<script src="temp_js?n=16" type="text/javascript"></script>
+<script src="temp_js?n=17" type="text/javascript"></script>
+<script src="temp_js?n=18" type="text/javascript"></script>
+<script src="temp_js?n=19" type="text/javascript"></script>
+<script src="temp_js?t=10" type="text/javascript"></script>
+
+<script src="timedRefresh?t=10" type="text/javascript"></script>
+
+<div id="container"></div>
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        zoomType: 'x',
+        panning: true,
+        panKey: 'shift'
+    },
+    title: {
+        text: 'График'
+    },
+
+    subtitle: {
+        text: 'данные со всех датчиков'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Температура'
+        }
+    },
+	xAxis: {
+        categories: time,
+    minTickInterval: 10
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 0
+        }
+    },
+    series: [
+  {name: '1-1',data: dat0},
+  {name: '1-2',data: dat1},
+  {name: '1-3',data: dat2},
+  {name: '1-4',data: dat3},
+  {name: '1-5',data: dat4},
+  {name: '2-1',data: dat5},
+  {name: '2-2',data: dat6},
+  {name: '2-3',data: dat7},
+  {name: '2-4',data: dat8},
+  {name: '2-5',data: dat9},
+  {name: '3-1',data: dat10},
+  {name: '3-2',data: dat11},
+  {name: '3-3',data: dat12},
+  {name: '3-4',data: dat13},
+  {name: '3-5',data: dat14},
+  {name: '4-1',data: dat15},
+  {name: '4-2',data: dat16},
+  {name: '4-3',data: dat17},
+  {name: '4-4',data: dat18},
+  {name: '4-5',data: dat19}
+	],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+		<a href=/>На главную</a>
+	</body>
+</html>

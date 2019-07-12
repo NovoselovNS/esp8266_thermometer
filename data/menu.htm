@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>menu</title>
+    <meta charset=utf-8>
+    <style>
+      body{background-color:#DDDDDD}
+      img{margin-top:100px;margin-left:50px}
+      a{text-decoration:none;color:white}
+      a:hover{color:cyan}
+      li{color:white}
+      [name=LANG]{margin-left:40px;width:108px}
+      #cp{font-size:12px;margin-left:25px;margin-top:10%}
+      #y{margin-left:35px}
+      #m8{padding-left:45px}
+      #syst{display:none;position:absolute;z-index:1;width:182px}
+      #nl{display:none}
+      #m7{cursor:pointer}
+      #n22{margin-left:10px;color:red;display:none}
+      #lang_edit{display:none;background-color:white;margin-left:40px;width:108px}
+      .m,.s{padding:2px 0 4px 25px;margin-top:3px;text-decoration:none;background:#444444;font-size:16px}
+      .s{background:#009688}
+      .m a,.s a{display:block}
+      .but2{margin-left:10px;width:160px;background-color:#968800;color:white;height:25px;display:none}
+      ::selection{background:transparent}
+      ::-moz-selection{background:transparent}
+      ::webkit-selection{background:transparent}
+    </style>
+    <script>
+      var page='clock_menu_', vers='v1.1_';
+      var tr={},vals={};
+      var txt_o=JSON.stringify(txt);
+      function get(n){return document.getElementById(n)}
+      function rnd(){return Math.random()}
+      function inner(h,e){get(h).innerHTML=e}
+      function lang(){return parent['MENU'].document.getElementById("lang_sel").value}
+
+
+
+      function mm(m){
+        var c;
+        for(var i=9;i<16;i++){
+          if(m==i) c='cyan';
+          else c='white';
+          get('m'+i).style.color=c;
+        }
+        sys(1);
+      }
+
+      function p(i){
+        cl=document.getElementsByClassName('s');
+        cl[0].className='m';
+        get(i).className='s';
+        sys(0);
+      }
+
+    </script>
+  </head>
+  <body onload=load();><br>
+    <div class=s id=stat><a href=status.htm target=MAIN id=m1 onclick="p('stat');">Статус</a></div>
+    <div class=m id=netw><a href=nomera.htm target=MAIN id=m2 onclick="p('netw');">Нумерация датчиков</a></div>
+    <div class=m id=acpo><a href=grafiki.htm target=MAIN id=m3 onclick="p('acpo');">Настройки периодов</a></div>
+    <div class=m id=clock><a href=calibrate.htm target=MAIN id=m5 onclick="p('clock');">Калибровка</a></div>
+    <div class=m id=sens><a href=network.htm target=MAIN id=m4 onclick="p('sens');">Настройки сети</a></div>
+	<div class=m id=cloc2k><a href=clock.htm target=MAIN id=m6 onclick="p('cloc2k');">Часы</a></div>
+	<div class=m id=cloc2k><a href=index.htm target=_top >На главную</a></div>
+<br>
+    <div id=ln>
+    </div>
+    <div id=nl><br><br></div>
+  </body>
+</html>

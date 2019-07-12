@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>График</title>
+
+		<style type="text/css">
+#container {
+	height: 600px;
+	margin: 0 auto
+}
+		</style>
+	</head>
+	<body>
+<script src="highcharts.js"></script>
+<script src="exporting.js"></script>
+<script src="export-data.js"></script>
+
+<script src="temp_js?sr=0" type="text/javascript"></script>
+<script src="temp_js?sr=1" type="text/javascript"></script>
+<script src="temp_js?sr=2" type="text/javascript"></script>
+<script src="temp_js?sr=3" type="text/javascript"></script>
+<script src="temp_js?t=10" type="text/javascript"></script>
+
+<script src="timedRefresh?t=10" type="text/javascript"></script>
+
+
+<div id="container"></div>
+
+
+
+		<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        zoomType: 'x',
+        panning: true,
+        panKey: 'shift'
+    },
+    title: {
+        text: 'График'
+    },
+
+    subtitle: {
+        text: 'среднее по лоткам'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Температура'
+        }
+    },
+	xAxis: {
+        categories: time,
+    minTickInterval: 10
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 0
+        }
+    },
+    series: [
+	{name: '1',data: sr0},
+	{name: '2',data: sr1},
+	{name: '3',data: sr2},
+	{name: '4',data: sr3}
+	],
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+		<a href=/>На главную</a>
+	</body>
+</html>

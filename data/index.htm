@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Термометр</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: red;
+}
+</style>
+<meta charset=utf-8>
+</head>
+<body>
+
+<ul>
+  <li><a href='tables.htm' class='active'>Температура в лотках</a></li>
+  <li><a href='temp20_10.htm'>20 датчиков,10мин</a></li>
+  <li><a href='temp4_10.htm'>Усредненный,10мин</a></li>
+  <li><a href='temp20_120.htm'>20 датчиков,120мин</a></li>
+  <li><a href='rh10.htm'>Влажность,10мин</a></li>
+  <li><a href='rh120.htm'>Влажность, 120мин</a></li>
+  <li><a href='/reset_minmax'>Сброс мин, макс</a></li>
+  <li><a href='all'>Графики на каждый день</a></li>
+  <li><a href='settings.htm'>Настройки</a></li>
+</ul>
+
+</body>
+</html>
